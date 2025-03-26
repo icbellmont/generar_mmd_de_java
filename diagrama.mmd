@@ -1,0 +1,66 @@
+classDiagram
+    class Automovil {
+        <<enum>> Tipo
+        TURISMO
+        TODOTERRENO
+        FURGONETA
+        package-private Automovil()
+        public calcularImporte()
+        public Automovil()
+        package-private calcularImporte()
+    }
+    class Camion {
+        package-private private int numEjes
+        package-private Camion()
+        public calcularImporte()
+        public Camion()
+        package-private calcularImporte()
+    }
+    class Main {
+        package-private Automovil auto1
+        package-private Automovil auto2
+        package-private Camion camion1
+        package-private LocalDateTime fechaSalida
+        package-private MiAparcamiento aparcamiento
+        package-private main()
+        package-private MiAparcamiento()
+        package-private Automovil()
+        package-private Camion()
+    }
+    class MiAparcamiento {
+        package-private private ArrayList<Vehiculo> vehiculos
+        package-private private int capacidad
+        package-private MiAparcamiento()
+        package-private introducirVehiculo()
+        package-private sacarVehiculo()
+        public MiAparcamiento()
+    }
+    class Vehiculo {
+        package-private protected LocalDateTime fechaEntrada
+        package-private protected String matricula
+        package-private protected boolean conAbono
+        package-private Vehiculo()
+        package-private calcularImporte()
+        package-private getMatricula()
+        package-private getFechaEntrada()
+        package-private isConAbono()
+        public Vehiculo()
+    }
+    Vehiculo <|-- Automovil : Herencia
+    Vehiculo <|-- Camion : Herencia
+    Main --o MiAparcamiento : Agregación
+    Main --o Automovil : Agregación
+    Main --o Camion : Agregación
+    Main --o LocalDateTime : Agregación
+    MiAparcamiento ..> Vehiculo : Dependencia
+
+    %% === Leyenda ===
+    class Leyenda {
+        "A <|-- B : Herencia"
+        "A <|.. B : Implementación"
+        "A --* B : Composición (todo-parte, vida dependiente)"
+        "A --o B : Agregación (todo-parte, vida independiente)"
+        "A ..> B : Dependencia (uso temporal)"
+        "<<enum>> : Enumeración"
+    }
+    
