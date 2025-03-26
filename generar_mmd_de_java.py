@@ -140,7 +140,7 @@ def extraer_atributos_metodos_dependencias(archivos_java, clases, clases_definid
 
                     if not es_palabra_clave_excluida(nombre):
                         # Crear firma única sin parámetros para visualización
-                        firma_visual = f"{visibilidad} {tipo_retorno} {nombre}()"
+                        # firma_visual = f"{visibilidad} {tipo_retorno} {nombre}()"
                         firma_visual = f"{visibilidad} {nombre}()"  # Mejor esta firma para evitar duplicados!!
                         # Guardar información completa para análisis
                         detalles["metodos"][firma_visual] = {
