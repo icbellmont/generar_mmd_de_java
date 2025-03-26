@@ -4,7 +4,7 @@ import sys
 from collections import OrderedDict
 from icecream import ic as icdebug
 
-# Expresiones regulares mejoradas
+# Expresiones regulares
 CLASS_REGEX = r"class (\w+)"
 INTERFACE_REGEX = r"interface (\w+)"
 ENUM_REGEX = r"enum\s+(\w+)\s*\{(.*?)\}"
