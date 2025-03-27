@@ -4,6 +4,18 @@ import sys
 from collections import OrderedDict
 from icecream import ic as icdebug
 
+# Ejemplo para ATRIBUTO_REGEX
+ATRIBUTO_REGEX = r"""
+    (private|public|protected)?\s*  # Visibilidad (opcional)
+    (static)?\s*                    # Static (opcional)
+    (final)?\s*                     # Final (opcional)
+    ([\w<>\[\], ]+)\s+              # Tipo (incluye genéricos, arrays)
+    (\w+)\s*                        # Nombre del atributo
+    (?:=\s*[^;]+)?\s*;              # Inicialización (opcional)
+"""
+# ... usar re.VERBOSE al compilar o buscar: re.findall(ATRIBUTO_REGEX, cuerpo_clase, re.VERBOSE)
+# O simplemente comentarios encima de la constante.
+
 # Expresiones regulares
 CLASS_REGEX = r"class (\w+)"
 INTERFACE_REGEX = r"interface (\w+)"
